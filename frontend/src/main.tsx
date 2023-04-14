@@ -1,11 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App'
 import './index.css'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { StoreProvider } from './Store'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <StoreProvider>
+      <QueryClientProvider client={new QueryClient()}>
+        <App />
+
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </StoreProvider>
   </React.StrictMode>
 )

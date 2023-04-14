@@ -1,14 +1,12 @@
-import { useState } from 'react'
-import { sampleProducts } from './data'
-import { Link, RouterProvider } from 'react-router-dom'
+import { RouterProvider } from 'react-router-dom'
 import router from './router/router'
-
+import { HelmetProvider } from 'react-helmet-async'
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div>
-      <RouterProvider router={router} />
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
     </div>
   )
 }

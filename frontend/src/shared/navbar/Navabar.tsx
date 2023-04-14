@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Nav, Row, Navbar, Container, Col } from 'react-bootstrap'
+import { Store } from '../../Store'
 
 const NavbarPage = () => {
   return (
